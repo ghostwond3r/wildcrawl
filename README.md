@@ -17,7 +17,7 @@ Here's a summary of what the script does:
 
 At the end you will have;
 ```
-results.txt = All tests results including title of domains and IPs
+final_result.txt = All tests results including title of domains and IPs
 domains.txt = domains filtered
 ips.txt = IPs alive from the domains.txt
 unique_urls.txt = The URLs crawled (duplicate and files removed)
