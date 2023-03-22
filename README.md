@@ -1,6 +1,7 @@
 <p align="center">
    <img width="500" height="100" src="https://user-images.githubusercontent.com/64184513/226793206-8a6e3449-d3da-4520-8561-923479048555.png"
 </p>
+<hr>
 
 > Bash script that crawls a target URL to get a better image of what is tied to a website.
 
