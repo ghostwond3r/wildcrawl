@@ -10,10 +10,10 @@ Here's a summary of what the script does:
 - Removes duplicate links.
 - Extracts all files of certain types (e.g., PDF, DOC, ZIP, JPG) and saves them to a separate file.
 - Extracts all domains and removes duplicates.
-- Filters out certain domains (e.g., Facebook, Twitter, LinkedIn) and saves the remaining domains.
-- Gets all the IPs associated with the filtered domains using the "getips" tool and saves them.
-- Extracts the title of each domain and IP using curl and saves the results to a file.
-- Filters out any results that have a title starting with "404" and saves the remaining results.
+- Filters out certain domains (e.g., Facebook, Twitter, LinkedIn).
+- Gets all the IPs associated with the filtered domains.
+- Extracts the title of each domain and IP.
+- Filters out any results that have a title starting with "404".
 
 At the end you will have;
 ```
