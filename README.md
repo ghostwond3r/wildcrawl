@@ -11,6 +11,7 @@ Here's a summary of what the script does:
 - Extracts all files of certain types (e.g., PDF, DOC, ZIP, JPG) and saves them to a separate file.
 - Extracts all domains and removes duplicates.
 - Filters out certain domains (e.g., Facebook, Twitter, LinkedIn).
+- Extract records of each domain.
 - Gets all the IPs associated with the filtered domains.
 - Extracts the title of each domain and IP.
 - Filters out any results that have a title starting with "404".
