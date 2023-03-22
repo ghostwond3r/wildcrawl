@@ -46,6 +46,23 @@ cat unique_urls.txt | awk -F/ '{print $3}' | sort -u >> domains.txt
 
 grep -Ev 'wikipedia|jquery|android|euronews|forbes|foreignaffairs|france24|huffingtonpost|economist|theguardian|dailytimes|washingtonpost|theglobeandmail|creativecommons|foreignpolicy|reuters|maxcdn|thefrontierpost|theintercept|weibo|wordpress|aljazeera|amnesty|bloomberg|bbc|cnn|dailymail|businessinsider|facebook|meta|messenger|fbcdn|bulletin|googletagmanager|oculus|twitter|youtube|instagram|google|apple|microsoft|twimg|telegram|t\.me|cloudflare|jsdelivr|youtu|linkedin' domains.txt > filtered_domains.txt
 
+echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+echo $GREEN [x] Extracting records of domains.. $RESET
+echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+
+echo  -e "\n# Domains records\n" >> results.txt
+
+domains_file="filtered_domains.txt"
+output_file="results.txt"
+
+# Loop through each domain
+while read domain; do
+    echo "Performing dig lookup for ${domain}..."
+    dig_output="$(dig ${domain} +nocmd +nocomments +nostats)"
+    echo "${dig_output}"
+    echo "${dig_output}" >> "${output_file}"
+done < "${domains_file}"
+
 # get all ips
 getips  -v -d filtered_domains.txt -o ips.txt
 
