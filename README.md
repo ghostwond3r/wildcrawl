@@ -17,7 +17,7 @@ Here's a summary of what the script does:
 - Extracts the title of each domain and IP.
 - Filters out any results that have a title starting with "404".
 
-At the end you will have;
+At the end you will have these files saved in "scan_1, scan_2, etc.";
 ```
 final_result.txt = All tests results including title of domains and IPs
 domains.txt = domains filtered
