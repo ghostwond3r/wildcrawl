@@ -3,6 +3,14 @@ export RED=$(tput setaf 1 :-"" 2>/dev/null)
 export GREEN=$(tput setaf 2 :-"" 2>/dev/null)
 export RESET=$(tput sgr0 :-"" 2>/dev/null)
 
+i=1
+while [ -d "scan_$i" ]; do
+  ((i++))
+done
+
+mkdir "scan_$i"
+cd "scan_$i"
+
 echo -e "\n $RED [x] Target URL:" 
 
 read URL
