@@ -19,8 +19,6 @@ grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" crawl.txt > urls.txt
 # remove duplicate
 sort urls.txt | uniq > unique_urls.txt
 
-echo -e "\n# Unique URLs\n$(cat unique_urls.txt)" >> results.txt
-
 # Extract all files and separate them from the test
 touch files.txt
 
@@ -32,6 +30,8 @@ for ext in pdf doc docx csv zip jpg png rar apk; do
   # Remove all links with the current extension from the unique_urls.txt file
   sed -i "/\.$ext\b/d" unique_urls.txt
 done
+
+echo -e "\n# Unique URLs\n$(cat unique_urls.txt)" >> results.txt
 
 echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 echo $GREEN [x] Extracted files and saved them in files.txt.. $RESET
