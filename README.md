@@ -30,11 +30,13 @@ files.txt = Files extracted during the crawl
 
 ## Installation and Usage
 ```
-apt install hakrawler -y
-pip3 install getips
 git clone https://github.com/NeverWonderLand/wildcrawl.git
 cd wildcrawl
+chmod +x install.sh
+./install.sh
 chmod +x wildcrawl.sh
+
+Then start with:
 ./wildcrawl.sh
 ```
 
