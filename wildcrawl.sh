@@ -31,7 +31,7 @@ sort urls.txt | uniq > unique_urls.txt
 touch files.txt
 
 # Loop through each file extension
-for ext in pdf doc docx csv zip jpg png rar apk; do
+for ext in pdf js txt doc docx csv zip jpg png rar apk; do
   # Find all links in the unique_urls.txt file with the current extension and save them to files.txt
   grep -o "http.*\.$ext" unique_urls.txt >> files.txt
 
