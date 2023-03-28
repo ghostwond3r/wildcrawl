@@ -6,9 +6,9 @@ echo 'export PATH="~/go/bin/:$PATH"' >> ~/.bashrc
 go install github.com/hakluke/hakrawler@latest
 echo ""
 
-# Install lolcat
-echo "Installing lolcat..."
-sudo apt-get install -y lolcat
+# Install lynx & sqlmap
+echo "Installing lynx and sqlmap..."
+sudo apt-get install -y lynx sqlmap
 echo ""
 
 # Install getips
