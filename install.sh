@@ -6,9 +6,9 @@ echo 'export PATH="~/go/bin/:$PATH"' >> ~/.bashrc
 go install github.com/hakluke/hakrawler@latest
 echo ""
 
-# Install lynx & sqlmap
-echo "Installing lynx and sqlmap..."
-sudo apt-get install -y lynx sqlmap
+# Install lynx, sqlmap, wget
+echo "Installing lynx, sqlmap and wget..."
+sudo apt-get install -y lynx sqlmap wget
 echo ""
 
 # Install getips
