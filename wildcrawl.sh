@@ -150,6 +150,17 @@ mv filtered_results.txt final_result.txt
 rm urls.txt results.txt https_domains.txt http_ips.txt domains.txt 
 mv filtered_domains.txt domains.txt
 
+echo -e "\n# Emails\n" >> final_result.txt
+
+echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+echo $GREEN [x] Searching emails.. $RESET
+echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+
+while read -r domain; do
+  echo -e "\n $RED Searching email for: $domain" $RESET
+  wget -q -O - https://$domain | grep -E -o "\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+\b" | tee -a final_result.txt
+done < domains.txt
+
 echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 echo $GREEN [x] Saving injection point.. $RESET
 echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
