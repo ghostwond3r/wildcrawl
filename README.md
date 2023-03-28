@@ -17,6 +17,7 @@ Here's a summary of what the script does:
 - Gets all the IPs associated with the filtered domains.
 - Extracts the title of each domain and IP.
 - Filters out any results that have a title starting with "404".
+- Search emails from each domain.
 
 <br>
 
