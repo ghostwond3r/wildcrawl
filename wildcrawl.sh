@@ -95,7 +95,7 @@ echo -e "\n# Links extracted\n" >> results.txt
 while read url; do
     # Run dirsearch on the domain and append the output to results.txt
     echo -e "\n $RED [x] Extracting link from $url...\n" $RESET
-    lynx -listonly -dump -unique_urls -connect_timeout=10 "$url" | tee -a results.txt
+    lynx -listonly -dump -unique_urls -connect_timeout=10 -read_timeout=15 "$url" | tee -a results.txt
 done < https_domains.txt
 
 # Read the ips.txt file, append "http://" to each line, and save the results to http_ips.txt
@@ -107,7 +107,7 @@ done < ips.txt
 while read url; do
     # Run dirsearch on the domain and append the output to results.txt
     echo -e "\n $RED [x] Extracting link from $url...\n" $RESET
-    lynx -listonly -dump -unique_urls -connect_timeout=10 "$url" | tee -a results.txt
+    lynx -listonly -dump -unique_urls -connect_timeout=10 -read_timeout=15 "$url" | tee -a results.txt
 done < http_ips.txt
 
 echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
@@ -156,27 +156,48 @@ echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 
 grep "?" unique_urls.txt > injection_point.txt
 
-echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
-echo $GREEN [x] Searching forms in URLs.. $RESET
-echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+while true; do
+  # Show menu options
+  echo -e "\n $RED [x] Choose an option\n" $RESET
+  echo "1. SQLmap"
+  echo "2. Nmap"
+  echo "3. Exit"
 
-# Ask the user if they want to test injection points using SQLmap
-read -p "Would you like to test forms on URLs using SQLmap? [y/n] " sqlmap
+  # Ask user for choice
+  read -p "Enter your choice (1-3): " choice
 
-if [[ $sqlmap == [Yy]* ]]; then
-  # Test injection points using SQLmap
-  echo "Testing injection points using SQLmap..."
-  sqlmap -v -m unique_urls.txt --forms --batch --skip-static --level=5 --risk=3 --random-agent | tee -a sqlmap.txt
-else
-  # Ask the user if they want to run Nmap on the IP addresses extracted
-  read -p "Would you like to run Nmap on the IP addresses extracted? [y/n] " nmap
+  # Handle the choice
+  case $choice in
+    1)
+      # Ask the user if they want to test injection points using SQLmap
+      read -p "Would you like to test forms on URLs using SQLmap? [y/n] " sqlmap
 
-  if [[ $nmap == [Yy]* ]]; then
-    # Run Nmap on the IP addresses extracted
-    echo "Running Nmap on the IP addresses extracted..."
-    nmap -vv -Pn -T4 --script vuln -iL ips.txt | tee -a nmap.txt
-  else
-    echo "Scan completed, see final_result.txt."
+      if [[ $sqlmap == [Yy]* ]]; then
+        # Test injection points using SQLmap
+        echo "Testing forms on URLs using SQLmap..."
+        sqlmap -v -m unique_urls.txt --forms --batch --skip-static --level=5 --risk=3 --random-agent | tee -a sqlmap.txt
+      else
+        echo "No forms testing performed."
+      fi
+      ;;
+    2)
+      # Ask the user if they want to run Nmap on the IP addresses extracted
+      read -p "Would you like to run Nmap on the IP addresses extracted? [y/n] " nmap
 
-  fi
-fi
+      if [[ $nmap == [Yy]* ]]; then
+        # Run Nmap on the IP addresses extracted
+        echo "Running Nmap on the IP addresses extracted..."
+        nmap -vv -Pn -T4 --script vuln -iL ips.txt | tee -a nmap.txt
+      else
+        echo "No Nmap scan performed."
+      fi
+      ;;
+    3)
+      echo "Exiting..."
+      exit 0
+      ;;
+    *)
+      echo "Invalid choice, please enter a number from 1-3."
+      ;;
+  esac
+done
