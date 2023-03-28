@@ -3,7 +3,10 @@
 </p>
 <hr>
 
-> Bash script that crawls a target URL to get a better image of what is tied to a website.
+<p align="center">
+Bash script that crawls a target URL to get a better image of what is tied to a website.
+</p>
+<hr>
 
 Here's a summary of what the script does:
 
@@ -18,32 +21,26 @@ Here's a summary of what the script does:
 - Extracts the title of each domain and IP.
 - Filters out any results that have a title starting with "404".
 - Search emails from each domain.
-
-<br>
-
-Then it gives you option to;
-- Test forms on URLs with SQLMAP;
-
-OR
+- Test URL forms with SQLMAP.
 - Test IPs vulnerabilities with NMAP.
 
-<hr>
+<hr><br>
 
-At the end you will have these files saved in "scan_1, scan_2, etc.";
-```
-final_result.txt = All tests results including title of domains and IPs
-domains.txt = domains filtered
-ips.txt = IPs alive from the domains.txt
-unique_urls.txt = The URLs crawled (duplicate and files removed)
-files.txt = Files extracted during the crawl
-injections_point.txt = Every URLs containing "?"
-sqlmap.txt = If you run sqlmap
-nmap.txt = If you run Nmap
-```
+**At the end you will have these files saved in /scan_1, /scan_2, etc.**
 
-*This script can be useful for reconnaissance and information gathering during a penetration testing engagement.*
+- crawl.txt  
+- domains.txt  
+- files.txt  
+- final_result.txt  
+- injection_point.txt  
+- ips.txt  
+- unique_urls.txt
+- sqlmap.txt - If you run sqlmap
+- nmap.txt - If you run Nmap
 
-<hr>
+![image](https://user-images.githubusercontent.com/64184513/228380278-6bb75044-03e6-4172-b998-f404ae46f22e.png)
+
+<hr><br>
 
 ## Installation and Usage
 ```
