@@ -13,9 +13,20 @@ Here's a summary of what the script does:
 - Extracts all domains and removes duplicates.
 - Filters out certain domains (e.g., Facebook, Twitter, LinkedIn).
 - Extract records of each domain.
+- Extract link from each domain.
 - Gets all the IPs associated with the filtered domains.
 - Extracts the title of each domain and IP.
 - Filters out any results that have a title starting with "404".
+
+<br>
+
+Then it gives you option to;
+- Test forms on URLs with SQLMAP;
+
+OR
+- Test IPs vulnerabilities with NMAP.
+
+<hr>
 
 At the end you will have these files saved in "scan_1, scan_2, etc.";
 ```
@@ -24,9 +35,14 @@ domains.txt = domains filtered
 ips.txt = IPs alive from the domains.txt
 unique_urls.txt = The URLs crawled (duplicate and files removed)
 files.txt = Files extracted during the crawl
+injections_point.txt = Every URLs containing "?"
+sqlmap.txt = If you run sqlmap
+nmap.txt = If you run Nmap
 ```
 
 *This script can be useful for reconnaissance and information gathering during a penetration testing engagement.*
+
+<hr>
 
 ## Installation and Usage
 ```
