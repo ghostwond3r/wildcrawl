@@ -24,6 +24,8 @@ Here's a summary of what the script does:
 - Test URL forms with SQLMAP.
 - Test IPs vulnerabilities with NMAP.
 
+![IMG_20230328_222204_555](https://user-images.githubusercontent.com/64184513/228413867-14afd1d6-9687-445d-9503-8077a7769bf5.jpg)
+
 <hr><br>
 
 **At the end you will have these files saved in /scan_1, /scan_2, etc.**
