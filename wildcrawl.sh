@@ -60,7 +60,7 @@ domains_file="filtered_domains.txt"
 output_file="results.txt"
 
 while read domain; do
-    echo -e "\n $RED Performing dig lookup for ${domain}...\n" $RESET
+    echo -e "$RED Performing dig lookup for ${domain}..." $RESET
     dig_output="$(dig ${domain} +nocmd +nocomments +nostats)"
     echo "${dig_output}"
     echo "${dig_output}" >> "${output_file}"
@@ -158,10 +158,10 @@ grep "?" unique_urls.txt > injection_point.txt
 
 while true; do
   # Show menu options
-  echo -e "\n $RED [x] Choose an option\n" $RESET
-  echo -e "\n $GREEN 1. SQLmap\n" $RESET
-  echo -e "\n $GREEN 2. Nmap\n" $RESET
-  echo -e "\n $GREEN 3. Exit" $RESET
+  echo -e "$RED [x] Choose an option" $RESET
+  echo -e "$GREEN 1. SQLmap" $RESET
+  echo -e "$GREEN 2. Nmap" $RESET
+  echo -e "$GREEN 3. Exit" $RESET
 
   # Ask user for choice
   read -p "Enter your choice (1-3): " choice
