@@ -60,7 +60,7 @@ domains_file="filtered_domains.txt"
 output_file="results.txt"
 
 while read domain; do
-    echo -e "\n $RED Performing dig lookup for ${domain}...\n"
+    echo -e "\n $RED Performing dig lookup for ${domain}...\n" $RESET
     dig_output="$(dig ${domain} +nocmd +nocomments +nostats)"
     echo "${dig_output}"
     echo "${dig_output}" >> "${output_file}"
