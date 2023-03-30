@@ -57,7 +57,7 @@ touch domains.txt
 # Extract all domains, remove duplicates, and sort them
 cat unique_urls.txt | awk -F/ '{print $3}' | sort -u >> domains.txt
 
-grep -Ev 'wikipedia|waze|goo\.gl|tiktok|icao\.int|bit\.ly|aparat\.com|jquery|android|euronews|forbes|foreignaffairs|france24|huffingtonpost|economist|theguardian|dailytimes|washingtonpost|theglobeandmail|creativecommons|foreignpolicy|reuters|maxcdn|thefrontierpost|theintercept|weibo|wordpress|aljazeera|amnesty|bloomberg|bbc|cnn|dailymail|businessinsider|facebook|meta|messenger|fbcdn|bulletin|googletagmanager|oculus|twitter|youtube|instagram|google|apple|microsoft|twimg|telegram|t\.me|cloudflare|jsdelivr|youtu|linkedin' domains.txt > filtered_domains.txt
+grep -Ev 'wikipedia|waze|goo\.gl|tiktok|akamai|icao\.int|bit\.ly|aparat\.com|jquery|android|euronews|forbes|foreignaffairs|france24|huffingtonpost|economist|theguardian|dailytimes|washingtonpost|theglobeandmail|creativecommons|foreignpolicy|reuters|maxcdn|thefrontierpost|theintercept|weibo|wordpress|aljazeera|amnesty|bloomberg|bbc|cnn|dailymail|businessinsider|facebook|meta|messenger|fbcdn|bulletin|googletagmanager|oculus|twitter|youtube|instagram|google|apple|microsoft|twimg|telegram|t\.me|cloudflare|jsdelivr|youtu|linkedin' domains.txt > filtered_domains.txt
 
 echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 echo $GREEN [x] Extracting records of domains.. $RESET
