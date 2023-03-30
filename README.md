@@ -21,7 +21,8 @@ Here's a summary of what the script does:
 - Extracts the title of each domain and IP.
 - Filters out any results that have a title starting with "404".
 - Search emails from each domain.
-- Test URL forms with SQLMAP.
+- Retrieves server banner.
+- Test URLs with SQLMAP.
 - Test IPs vulnerabilities with NMAP.
 
 ![IMG_20230328_222204_555](https://user-images.githubusercontent.com/64184513/228413867-14afd1d6-9687-445d-9503-8077a7769bf5.jpg)
