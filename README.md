@@ -4,7 +4,7 @@
 <hr>
 
 <p align="center">
-Bash script that crawls a target URL to get a better image of what is tied to a website.
+Bash script that crawls a target URL and everything around it to get a better image of what is tied to a website.
 </p>
 <hr>
 
