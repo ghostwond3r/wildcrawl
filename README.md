@@ -13,17 +13,21 @@ Here's a summary of what the script does:
 - Crawls the target URL using Hakrawler .
 - Removes duplicate links.
 - Extracts all files of certain types (e.g., PDF, DOC, ZIP, JPG) and saves them to a separate file.
-- Extracts all domains and removes duplicates.
+- Extracts each domain from the link crawled and removes duplicates.
 - Filters out certain domains (e.g., Facebook, Twitter, LinkedIn).
-- Extract records of each domain.
-- Extract link from each domain.
-- Gets all the IPs associated with the filtered domains.
+- Extract records (AAAA, CNAME, NS, etc)
+- Extract DNS by fetching the certificate.
+- Crawl again but this time using Lynx on the domain tied to the main one.
+- Gets main IPs of all domains.
 - Extracts the title of each domain and IP.
 - Filters out any results that have a title starting with "404".
 - Search emails from each domain.
 - Retrieves server banner.
-- Test URLs with SQLMAP.
-- Test IPs vulnerabilities with NMAP.
+
+At the end, the tool gives you 3 options;
+- SQLmap
+- HTTP-ENUM
+- Port Scan
 
 <hr><br>
 
