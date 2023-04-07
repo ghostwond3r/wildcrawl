@@ -25,7 +25,7 @@ Here's a summary of what the script does:
 - Retrieves server banner.
 
 At the end, the tool gives you 3 options;
-- SQLmap
+- Injection
 - HTTP-ENUM
 - Port Scan
 
