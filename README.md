@@ -24,7 +24,7 @@ Here's a summary of what the script does:
 - Search emails from each domain.
 - Retrieves server banner.
 
-At the end, the tool gives you 3 options;
+At the end, the tool gives you 6 options;
 - Injection
 - HTTP-ENUM
 - Port Scan
@@ -45,15 +45,6 @@ At the end, the tool gives you 3 options;
 - social_links.txt
 - temp_banner.txt
 - unique_urls.txt
-
-**Optionnal test**
-
-- sqlmap.txt - option 1
-- HTTP_enum.txt - option 2
-- port.txt - option 3
-- ffuf.txt - option 4
-- nikto.txt - option 5
-- nmap_access_control.txt - option 6
 
 ![image](https://user-images.githubusercontent.com/64184513/228380278-6bb75044-03e6-4172-b998-f404ae46f22e.png)
 
