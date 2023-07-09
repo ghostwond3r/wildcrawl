@@ -46,7 +46,8 @@ At the end, the tool gives you 6 options;
 - temp_banner.txt
 - unique_urls.txt
 
-![image](https://user-images.githubusercontent.com/64184513/228380278-6bb75044-03e6-4172-b998-f404ae46f22e.png)
+![image](https://github.com/NeverWonderLand/wildcrawl/assets/64184513/14af7f15-9e97-427d-84c6-8dfa1f4ee6da)
+
 
 <hr><br>
 
